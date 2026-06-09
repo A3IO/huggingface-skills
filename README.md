@@ -12,7 +12,7 @@ The skills in this repository follow the standardized [Agent Skills](https://age
 In practice, skills are self-contained folders that package instructions, scripts, and resources together for an AI agent to use on a specific use case. Each folder includes a `SKILL.md` file with YAML frontmatter (name and description) followed by the guidance your coding agent follows while the skill is active. 
 
 > [!TIP]
-> If your agent doesn't support skills, you can use [`agents/AGENTS.md`](agents/AGENTS.md) directly as a fallback.
+> If your agent doesn't support skills, you can use [`agentsmd/AGENTS.md`](agentsmd/AGENTS.md) directly as a fallback.
 
 The skills in this repository are also available through:
  - Cursor Marketplace (https://cursor.com/marketplace/huggingface)
@@ -48,7 +48,7 @@ For example:
 
 2. Once a skill is available in one of those locations, Codex will discover it using the Agent Skills standard and load the `SKILL.md` instructions when it decides to use that skill or when you explicitly invoke it.
 
-3. If your Codex setup still relies on `AGENTS.md`, you can use the generated [`agents/AGENTS.md`](agents/AGENTS.md) file in this repo as a fallback bundle of instructions.
+3. If your Codex setup still relies on `AGENTS.md`, you can use the generated [`agentsmd/AGENTS.md`](agentsmd/AGENTS.md) file in this repo as a fallback bundle of instructions.
 
 ### Gemini CLI
 
@@ -100,6 +100,7 @@ This repository contains a few skills to get you started. You can also contribut
 | `huggingface-gradio` | Build Gradio web UIs and demos in Python. Use when creating or editing Gradio apps, components, event listeners, layouts, or chatbots. | [SKILL.md](skills/huggingface-gradio/SKILL.md) |
 | `huggingface-llm-trainer` | Train or fine-tune language models using TRL on Hugging Face Jobs infrastructure. Covers SFT, DPO, GRPO and reward modeling training methods, plus GGUF conversion for local deployment. Includes hardware selection, cost estimation, Trackio monitoring, and Hub persistence. | [SKILL.md](skills/huggingface-llm-trainer/SKILL.md) |
 | `huggingface-local-models` | Use to select models to run locally with llama.cpp and GGUF on CPU, Mac Metal, CUDA, or ROCm. Covers finding GGUFs, quant selection, running servers, exact GGUF file lookup, conversion, and OpenAI-compatible local serving. | [SKILL.md](skills/huggingface-local-models/SKILL.md) |
+| `huggingface-lora-space-builder` | Build and publish a Gradio demo on Hugging Face Spaces for a user-provided LoRA. Use when someone asks to create, generate, ship, or publish a Space, demo, Gradio app, or playground for a LoRA — including LoRAs for Qwen-Image, Qwen-Image-Edit, LTX-Video, Wan, FLUX, SDXL, or other diffusion base models. Also triggers when someone describes a LoRA they trained or hosts on the Hub and wants to share it. Covers picking the right base pipeline and `diffusers` inference recipe, designing a UI tailored to the LoRA's task and inputs (Union/multi-task control, edit, video, image, etc.), respecting model-card recommendations (trigger words, steps, guidance, LoRA scale, example inputs), and shipping to ZeroGPU hardware as a private Space by default. | [SKILL.md](skills/huggingface-lora-space-builder/SKILL.md) |
 | `huggingface-paper-publisher` | Publish and manage research papers on Hugging Face Hub. Supports creating paper pages, linking papers to models/datasets, claiming authorship, and generating professional markdown-based research articles. | [SKILL.md](skills/huggingface-paper-publisher/SKILL.md) |
 | `huggingface-papers` | Look up and read Hugging Face paper pages in markdown, and use the papers API for structured metadata like authors, linked models, datasets, Spaces, and media URLs when needed. | [SKILL.md](skills/huggingface-papers/SKILL.md) |
 | `huggingface-spaces` | Build, deploy, and maintain applications on Hugging Face Spaces — Gradio / Docker / Static SDKs, ZeroGPU and dedicated hardware, model loading, debugging, buckets, inference providers, community grants. Use whenever the user asks to create or host an app on Hugging Face, port code onto ZeroGPU, fix a Space that won't build or run, or otherwise work with `hf spaces …`, `@spaces.GPU`, Space README frontmatter, or the `spaces` Python package. | [SKILL.md](skills/huggingface-spaces/SKILL.md) |
@@ -109,6 +110,7 @@ This repository contains a few skills to get you started. You can also contribut
 | `huggingface-zerogpu` | Coding rules for Gradio Spaces using Hugging Face Spaces ZeroGPU hardware. Covers `@spaces.GPU`, duration and quota tuning, pickle-based process isolation, `gr.State` semantics across the worker boundary, the CUDA availability model, concurrency safety, and CUDA wheel-only build constraints. | [SKILL.md](skills/huggingface-zerogpu/SKILL.md) |
 | `train-sentence-transformers` | Train or fine-tune sentence-transformers models across all three architectures: SentenceTransformer (bi-encoder embeddings), CrossEncoder (rerankers), and SparseEncoder (SPLADE). Covers loss selection, hard-negative mining, evaluators, distillation, LoRA, Matryoshka, and Hugging Face Hub publishing. | [SKILL.md](skills/train-sentence-transformers/SKILL.md) |
 | `transformers-js` | Run state-of-the-art machine learning models directly in JavaScript/TypeScript for NLP, computer vision, audio processing, and multimodal tasks. Works in Node.js and browsers with WebGPU/WASM using Hugging Face models. | [SKILL.md](skills/transformers-js/SKILL.md) |
+| `trl-training` | Train and fine-tune transformer language models using TRL (Transformers Reinforcement Learning). Supports SFT, DPO, GRPO, KTO, RLOO and Reward Model training via CLI commands. | [SKILL.md](skills/trl-training/SKILL.md) |
 <!-- END_SKILLS_TABLE -->
 
 ### Using skills in your coding agent
